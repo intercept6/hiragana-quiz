@@ -150,12 +150,12 @@ export const quizData: QuizItem[] = [
   },
   {
     hiragana: "そ",
-    word: "そら",
+    word: "そば",
     choices: [
       { text: "さつまいも", emoji: "🍠" },
       { text: "しろくま", emoji: "🐻‍❄️" },
       { text: "すぽんじ", emoji: "🧽" },
-      { text: "そら", emoji: "☁️" },
+      { text: "そば", emoji: "🍜" },
     ],
   },
   {
@@ -343,7 +343,7 @@ export const quizData: QuizItem[] = [
     word: "めがね",
     choices: [
       { text: "まんが", emoji: "📚" },
-      { text: "みどり", emoji: "🟢" },
+      { text: "みかん", emoji: "🍊" },
       { text: "むぎちゃ", emoji: "🍵" },
       { text: "めがね", emoji: "👓" },
     ],
@@ -366,6 +366,86 @@ export const quizData: QuizItem[] = [
       { text: "ゆき", emoji: "❄️" },
       { text: "よーよー", emoji: "🪀" },
       { text: "らっぱ", emoji: "🎺" },
+    ],
+  },
+  {
+    hiragana: "ゆ",
+    word: "ゆき",
+    choices: [
+      { text: "やま", emoji: "⛰️" },
+      { text: "ゆき", emoji: "❄️" },
+      { text: "よる", emoji: "🌙" },
+      { text: "らいおん", emoji: "🦁" },
+    ],
+  },
+  {
+    hiragana: "よ",
+    word: "よーよー",
+    choices: [
+      { text: "やかん", emoji: "🫖" },
+      { text: "ゆびわ", emoji: "💍" },
+      { text: "よーよー", emoji: "🪀" },
+      { text: "らくだ", emoji: "🐪" },
+    ],
+  },
+  {
+    hiragana: "ら",
+    word: "らっぱ",
+    choices: [
+      { text: "やきゅう", emoji: "⚾" },
+      { text: "ゆうびんきょく", emoji: "🏤" },
+      { text: "よっと", emoji: "⛵" },
+      { text: "らっぱ", emoji: "🎺" },
+    ],
+  },
+  {
+    hiragana: "り",
+    word: "りんご",
+    choices: [
+      { text: "らくだ", emoji: "🐪" },
+      { text: "りんご", emoji: "🍎" },
+      { text: "るーれっと", emoji: "🎰" },
+      { text: "れもん", emoji: "🍋" },
+    ],
+  },
+  {
+    hiragana: "る",
+    word: "るーれっと",
+    choices: [
+      { text: "らじお", emoji: "📻" },
+      { text: "りぼん", emoji: "🎀" },
+      { text: "るーれっと", emoji: "🎰" },
+      { text: "れんこん", emoji: "🥬" },
+    ],
+  },
+  {
+    hiragana: "れ",
+    word: "れもん",
+    choices: [
+      { text: "らくがき", emoji: "🖍️" },
+      { text: "りす", emoji: "🐿️" },
+      { text: "るびー", emoji: "💎" },
+      { text: "れもん", emoji: "🍋" },
+    ],
+  },
+  {
+    hiragana: "ろ",
+    word: "ろぼっと",
+    choices: [
+      { text: "らくだ", emoji: "🐪" },
+      { text: "りんご", emoji: "🍎" },
+      { text: "るーれっと", emoji: "🎰" },
+      { text: "ろぼっと", emoji: "🤖" },
+    ],
+  },
+  {
+    hiragana: "わ",
+    word: "わに",
+    choices: [
+      { text: "わに", emoji: "🐊" },
+      { text: "りす", emoji: "🐿️" },
+      { text: "るびー", emoji: "💎" },
+      { text: "れもん", emoji: "🍋" },
     ],
   },
 ];
