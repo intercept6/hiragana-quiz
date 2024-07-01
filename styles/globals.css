@@ -1,7 +1,16 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
 .quiz-container {
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .hiragana-display {
@@ -10,11 +19,31 @@
   display: inline-block;
 }
 
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 .choices button {
-  font-size: 20px;
-  margin: 10px;
+  font-size: 1.2rem;
   padding: 10px 20px;
-  transition: transform 0.1s;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.choices button:hover {
+  background-color: #45a049;
 }
 
 .choices button:active {
@@ -22,11 +51,12 @@
 }
 
 .feedback {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-top: 20px;
   font-weight: bold;
   padding: 10px;
   border-radius: 5px;
+  text-align: center;
 }
 
 .feedback.correct {
@@ -37,4 +67,10 @@
 .feedback.incorrect {
   background-color: rgba(244, 67, 54, 0.2);
   color: #f44336;
+}
+
+.score {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
