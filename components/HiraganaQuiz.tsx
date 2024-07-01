@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useSpring, animated } from 'react-spring';
-import useSound from 'use-sound';
-import { QuizItem, quizData } from '../data/quizData';
+import React, { useState, useEffect } from "react";
+import { useSpring, animated } from "react-spring";
+import useSound from "use-sound";
+import { QuizItem, quizData } from "../data/quizData";
 
 const HiraganaQuiz: React.FC = () => {
   const [currentQuiz, setCurrentQuiz] = useState<QuizItem | null>(null);
@@ -9,18 +9,18 @@ const HiraganaQuiz: React.FC = () => {
   const [showFeedback, setShowFeedback] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [playCorrect] = useSound('/sounds/correct.mp3', {volume: 0.5});
-  const [playIncorrect] = useSound('/sounds/incorrect.mp3', {volume: 0.5});
-  const [playPop] = useSound('/sounds/pop.mp3', {volume: 0.5});
+  const [playCorrect] = useSound("/sounds/correct.mp3");
+  const [playIncorrect] = useSound("/sounds/incorrect.mp3");
+  const [playPop] = useSound("/sounds/pop.mp3");
 
   const feedbackAnimation = useSpring({
     opacity: showFeedback ? 1 : 0,
-    transform: showFeedback ? 'translateY(0)' : 'translateY(-20px)',
+    transform: showFeedback ? "translateY(0)" : "translateY(-20px)",
   });
 
   const hiraganaAnimation = useSpring({
-    from: { opacity: 0, transform: 'scale(0.5)' },
-    to: { opacity: 1, transform: 'scale(1)' },
+    from: { opacity: 0, transform: "scale(0.5)" },
+    to: { opacity: 1, transform: "scale(1)" },
     reset: true,
     key: currentQuiz?.hiragana,
   });
@@ -57,21 +57,27 @@ const HiraganaQuiz: React.FC = () => {
 
   return (
     <div className="quiz-container">
-      <h2>ひらがなクイズ</h2>
       <div className="score">スコア: {score}</div>
       <animated.div style={hiraganaAnimation} className="hiragana-display">
         {currentQuiz.hiragana}
       </animated.div>
-      <div className="question">どの言葉が「{currentQuiz.hiragana}」からはじまる？</div>
       <div className="choices">
         {currentQuiz.choices.map((choice, index) => (
-          <button key={index} onClick={() => handleAnswer(choice)} disabled={showFeedback}>
-            {choice}
+          <button
+            key={index}
+            onClick={() => handleAnswer(choice.text)}
+            disabled={showFeedback}
+          >
+            <span className="emoji">{choice.emoji}</span>
+            <span className="choice-text">{choice.text}</span>
           </button>
         ))}
       </div>
-      <animated.div style={feedbackAnimation} className={`feedback ${isCorrect ? 'correct' : 'incorrect'}`}>
-        {isCorrect ? 'せいかい！' : 'ざんねん...もういちどチャレンジしよう！'}
+      <animated.div
+        style={feedbackAnimation}
+        className={`feedback ${isCorrect ? "correct" : "incorrect"}`}
+      >
+        {isCorrect ? "せいかい！" : "ざんねん...もういちどチャレンジしよう！"}
       </animated.div>
     </div>
   );
