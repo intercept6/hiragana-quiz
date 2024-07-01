@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import useSound from "use-sound";
 import { QuizItem, quizData } from "../data/quizData";
@@ -24,11 +24,7 @@ const HiraganaQuiz: React.FC = () => {
     key: currentQuiz?.hiragana,
   });
 
-  useEffect(() => {
-    getNextQuiz();
-  }, []);
-
-  const getNextQuiz = () => {
+  const getNextQuiz = useCallback(() => {
     const randomIndex = Math.floor(Math.random() * quizData.length);
     const quiz = { ...quizData[randomIndex] };
 
@@ -37,7 +33,11 @@ const HiraganaQuiz: React.FC = () => {
 
     setCurrentQuiz(quiz);
     setShowFeedback(false);
-  };
+  }, []);
+
+  useEffect(() => {
+    getNextQuiz();
+  }, [getNextQuiz]);
 
   // 配列をシャッフルする関数
   const shuffleArray = (array: any[]) => {
