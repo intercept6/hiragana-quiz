@@ -57,12 +57,15 @@ const HiraganaQuiz: React.FC = () => {
       setShowFeedback(true);
       if (correct) {
         playCorrect();
+        setTimeout(() => {
+          getNextQuiz();
+        }, 1500);
       } else {
         playIncorrect();
+        setTimeout(() => {
+          setShowFeedback(false);
+        }, 1500);
       }
-      setTimeout(() => {
-        getNextQuiz();
-      }, 1500);
     }
   };
 
@@ -92,7 +95,7 @@ const HiraganaQuiz: React.FC = () => {
         style={feedbackAnimation}
         className={`feedback ${isCorrect ? "correct" : "incorrect"}`}
       >
-        {isCorrect ? "せいかい！" : "ざんねん...もういちどチャレンジしよう！"}
+        {isCorrect ? "せいかい！" : "まちがい"}
       </animated.div>
     </div>
   );
