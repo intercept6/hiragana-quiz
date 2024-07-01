@@ -4,7 +4,7 @@ import HiraganaQuiz from "../components/HiraganaQuiz";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: "#f0f0f0", minHeight: "100vh" }}>
       <Head>
         <title>ひらがな学習アプリ</title>
         <meta name="description" content="3歳の子供向けひらがな学習アプリ" />

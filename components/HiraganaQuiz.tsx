@@ -30,8 +30,23 @@ const HiraganaQuiz: React.FC = () => {
 
   const getNextQuiz = () => {
     const randomIndex = Math.floor(Math.random() * quizData.length);
-    setCurrentQuiz(quizData[randomIndex]);
+    const quiz = { ...quizData[randomIndex] };
+
+    // 選択肢をシャッフル
+    quiz.choices = shuffleArray(quiz.choices);
+
+    setCurrentQuiz(quiz);
     setShowFeedback(false);
+  };
+
+  // 配列をシャッフルする関数
+  const shuffleArray = (array: any[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   };
 
   const handleAnswer = (choice: string) => {

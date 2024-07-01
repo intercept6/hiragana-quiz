@@ -16,16 +16,6 @@ body {
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.question {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #333;
 }
 
 .hiragana-display {
@@ -34,10 +24,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #4CAF50;
+  /* color: #4CAF50; */
 }
 
-/* 既存のスタイルはそのままで、.score 関連のスタイルは削除してください */
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
 
 .choices {
   display: flex;
@@ -67,12 +62,12 @@ body {
 }
 
 .choices button .emoji {
-  font-size: 1.5rem;
+  font-size: 3rem;
   margin-right: 10px;
 }
 
 .choices button .choice-text {
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 .feedback {
@@ -92,10 +87,4 @@ body {
 .feedback.incorrect {
   background-color: rgba(244, 67, 54, 0.2);
   color: #f44336;
-}
-
-.score {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  text-align: center;
 }
