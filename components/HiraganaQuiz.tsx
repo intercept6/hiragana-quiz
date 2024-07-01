@@ -5,7 +5,6 @@ import { QuizItem, quizData } from "../data/quizData";
 
 const HiraganaQuiz: React.FC = () => {
   const [currentQuiz, setCurrentQuiz] = useState<QuizItem | null>(null);
-  const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -42,7 +41,6 @@ const HiraganaQuiz: React.FC = () => {
       setIsCorrect(correct);
       setShowFeedback(true);
       if (correct) {
-        setScore(score + 1);
         playCorrect();
       } else {
         playIncorrect();
@@ -57,10 +55,12 @@ const HiraganaQuiz: React.FC = () => {
 
   return (
     <div className="quiz-container">
-      <div className="score">スコア: {score}</div>
       <animated.div style={hiraganaAnimation} className="hiragana-display">
         {currentQuiz.hiragana}
       </animated.div>
+      <div className="question">
+        どのことばが「{currentQuiz.hiragana}」からはじまる？
+      </div>
       <div className="choices">
         {currentQuiz.choices.map((choice, index) => (
           <button
